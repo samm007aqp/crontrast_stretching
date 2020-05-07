@@ -6,7 +6,7 @@ img = cv2.imread('woman.jpg')
 row,cols,channels = img.shape
 smallest = np.amin(img)
 biggest = np.amax(img)
-#print( "maximo:" + str(biggest)+"minimo"+str(smallest))
+
 
 output = img.copy()
 lista = []
@@ -18,6 +18,9 @@ for i in range (row):
 print("min value %s max value %s" % (smallest , biggest))
 
 cv2.imwrite('outputcell.png',output)
+smallest = np.amin(output)
+biggest = np.amax(output)
+print( "maximo:" + str(biggest)+"minimo"+str(smallest))
 
 cv2.imshow('input',img)
 cv2.imshow('output',output)
